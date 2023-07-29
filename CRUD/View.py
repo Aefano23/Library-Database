@@ -31,13 +31,13 @@ def create_console():
 
         #Confirmation message for saving the input
         is_done = input("Save this book (y/n): ")
-        if is_done == 'y' or is_done == 'Y':
+        if is_done.lower() == 'y':
             Operation.create(title,author,year)
             print("\nNew book entry has been added to the database.")
 
         #Confirmation message for back to main menu
         back = input("Back to main menu? (y/n): ")
-        if back == 'y' or back == 'Y':
+        if back.lower() == 'y':
             break
 
 
@@ -80,7 +80,7 @@ def show_console():
         read_console()
 
         back = input("Back to main menu? (y/n): ")
-        if back == 'y' or back == 'Y':
+        if back.lower() == 'y':
             break
     
 
@@ -133,7 +133,7 @@ def update_console():
                 print(f'3. Year\t: {year:4}')   
         
                 is_done = input("Done Updating? (y/n): ")
-                if is_done == 'y' or is_done == 'Y':
+                if is_done.lower() == 'y':
                     Operation.update(book_number,pk,data_add,title,author,year)
                     print('Book data has been updated.')
                     break
@@ -142,7 +142,7 @@ def update_console():
             print('Invalid number, please try again')
         
         back = input("Back to main menu? (y/n): ")
-        if back == 'y' or back == 'Y':
+        if back.lower() == 'y':
             break  
 
     
@@ -177,7 +177,7 @@ def delete_console():
             print('Invalid number, please try again')
 
         back = input("Back to main menu? (y/n): ")
-        if back == 'y' or back == 'Y':
+        if back.lower() == 'y':
             break
 
     
