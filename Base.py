@@ -46,7 +46,7 @@ if __name__ == "__main__":
             case "4": CRUD.delete_console() 
             case "5": 
                 exit = input("Are you sure want to exit? (y/n): ")
-                if exit == 'y' or exit == 'Y':
+                if exit.lower() == 'y':
                     break
                     
     print("\nThank you for using this app\n") #end of program.
