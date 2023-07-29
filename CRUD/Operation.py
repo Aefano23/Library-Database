@@ -116,8 +116,6 @@ def update(book_number,pk,data_add,title,author,year):
     
     data_str = f"{data['pk']},{data['date_added']},{data['title']},{data['author']},{data['year']}\n"
     
-    #data_length = len(data_str)
-
     try:
         with open(Database.DB_NAME,'r') as file:
             counter = 0
@@ -137,13 +135,6 @@ def update(book_number,pk,data_add,title,author,year):
 
     shutil.move('update_temp.txt',Database.DB_NAME)
 
-    '''
-    try:
-        with open(Database.DB_NAME,'r+',encoding='utf-8') as file:
-            file.seek(data_length*(book_number-1))
-            file.write(data_str)     
-    except:
-        print("Error while updating book data")
-    '''
+ 
     
 
