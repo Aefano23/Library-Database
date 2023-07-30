@@ -16,6 +16,10 @@ import CRUD as CRUD
 if __name__ == "__main__": 
     operating_system = os.name
     
+    match operating_system: #OS matching to clear terminal when executing the program.
+        case "posix" : os.system('clear') #matching OS linux/unix.
+        case "nt" : os.system('cls') #matching OS windows
+        
     #Checking the existence of the Database.
     CRUD.init_console()
     
