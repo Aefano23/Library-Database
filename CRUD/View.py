@@ -88,8 +88,8 @@ def update_console():
     """
     Function to take input from the user for updating the book data
     """
-    read_console()
     while(True):
+        read_console()
         print("Please select the book number that need to be update: ")
         book_number = int(input('Book Number: '))
         book_data = Operation.read(index=book_number)
