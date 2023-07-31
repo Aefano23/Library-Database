@@ -16,7 +16,7 @@ import CRUD as CRUD
 if __name__ == "__main__": 
     operating_system = os.name
     
-    match operating_system: #OS matching to clear terminal when executing the program.
+    match operating_system: #OS matching to clear terminal before checking the database.
         case "posix" : os.system('clear') #matching OS linux/unix.
         case "nt" : os.system('cls') #matching OS windows
         
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     CRUD.init_console()
     
     while(True):
-        match operating_system: #OS matching to clear terminal when executing the program.
+        match operating_system: #OS matching to clear terminal before go into main page.
             case "posix" : os.system('clear') #matching OS linux/unix.
             case "nt" : os.system('cls') #matching OS windows.
 
