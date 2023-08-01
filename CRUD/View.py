@@ -1,7 +1,7 @@
 """
 This module will take the user's input related to CRUD process.
 """
-from . import Database
+from . import Operation
 
 def create_console():
     """
@@ -32,7 +32,7 @@ def create_console():
         #Confirmation message for saving the input
         is_done = input("Save this book (y/n): ")
         if is_done.lower() == 'y':
-            Database.create(title,author,year)
+            Operation.create(title,author,year)
             print("\nNew book entry has been added to the database.")
 
         #Confirmation message for back to main menu
@@ -45,7 +45,7 @@ def read_console():
     """
     Function to show the book data when the users choose option 3 or 4 on the main program (Base.py) 
     """
-    data_file =  Database.read() #calling the read function from Operation module to read Database
+    data_file =  Operation.read() #calling the read function from Operation module to read Database
     
     # Defining variables for header
     index = 'No'
@@ -92,7 +92,7 @@ def update_console():
         read_console()
         print("Please select the book number that need to be update: ")
         book_number = int(input('Book Number: '))
-        book_data = Database.read(index=book_number)
+        book_data = Operation.read(index=book_number)
          
         if book_data:
             data_break = book_data.split(',')
@@ -134,7 +134,7 @@ def update_console():
         
                 is_done = input("Done Updating? (y/n): ")
                 if is_done.lower() == 'y':
-                    Database.update(book_number,pk,data_add,title,author,year)
+                    Operation.update(book_number,pk,data_add,title,author,year)
                     print('Book data has been updated.')
                     break
 
@@ -154,7 +154,7 @@ def delete_console():
         read_console()
         print("Please select the book number that need to be delete: ")
         book_number = int(input('Book Number: '))
-        book_data = Database.read(index=book_number)
+        book_data = Operation.read(index=book_number)
 
         if book_data:
             data_break = book_data.split(',')
@@ -171,7 +171,7 @@ def delete_console():
             print(f'3. Year\t: {year:4}')
             is_done = input("Confirm delete? (y/n): ")
             if is_done == 'y' or is_done == 'Y':
-                Database.delete(book_number)
+                Operation.delete(book_number)
                 print("Book has been deleted successfully.")
         else:
             print('Invalid number, please try again')
